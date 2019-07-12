@@ -1,0 +1,14 @@
+{
+    "name": "roma/hexlet",
+    "description": "I have no idea what i do",
+    "authors": [
+        {
+            "name": "roma",
+            "email": "silvervaza@gmail.com"
+        }
+    ],
+    "require": {},
+    "bin": [
+	    "bin/brain-games"
+    ]
+}
