@@ -15,7 +15,8 @@
     ],
     "autoload": {
       "files": [
-          "src/cli.php"
+          "src/cli.php",
+	  "src/check-fairness.php"
       ]
     },
     "require-dev": {
