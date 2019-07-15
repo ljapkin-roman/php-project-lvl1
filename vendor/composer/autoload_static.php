@@ -9,7 +9,7 @@ class ComposerStaticInita9700f6bd40352d3cc7344d716841ee7
     public static $files = array (
         'be01b9b16925dcb22165c40b46681ac6' => __DIR__ . '/..' . '/wp-cli/php-cli-tools/lib/cli/cli.php',
         '1aba6747de7d083fc542636fff8bbfe6' => __DIR__ . '/../..' . '/src/cli.php',
-        '4d0c2fa27e1b4d4c3b9451dc3bce984f' => __DIR__ . '/../..' . '/src/check-fairness.php',
+        'f1aee5825934e03fcbb1d1ad6ce4ae1b' => __DIR__ . '/../..' . '/src/games/check-fairness.php',
     );
 
     public static $prefixesPsr0 = array (

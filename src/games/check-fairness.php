@@ -20,7 +20,7 @@ function yesOrNo()
 			    $counterRightResponse--;
 			    line("Correct!");
 		    } else {
-			    line("{$answerUser} is wrong answer ;(. Correct answer was {$correctResponse}. Let's try again, {$name}!");
+			    line("\"{$answerUser}\" is wrong answer ;(. Correct answer was \"{$correctResponse}\". Let's try again, {$name}!");
 			    break;
 		    }
 	    } else {
