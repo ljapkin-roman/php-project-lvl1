@@ -1,6 +1,6 @@
 {
     "name": "ogurchik/brain-games",
-    "description": "I have no idea what i do",
+    "description": "small games for hexlet",
     "authors": [
         {
             "name": "roma",
@@ -16,7 +16,7 @@
     "autoload": {
       "files": [
           "src/cli.php",
-	  "src/check-fairness.php"
+	  "src/games/check-fairness.php"
       ]
     },
     "require-dev": {
