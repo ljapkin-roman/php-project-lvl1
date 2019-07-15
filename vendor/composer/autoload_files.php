@@ -7,6 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'be01b9b16925dcb22165c40b46681ac6' => $vendorDir . '/wp-cli/php-cli-tools/lib/cli/cli.php',
-    '1aba6747de7d083fc542636fff8bbfe6' => $baseDir . '/src/cli.php',
-    'f1aee5825934e03fcbb1d1ad6ce4ae1b' => $baseDir . '/src/games/check-fairness.php',
+    '8622eef84537a04da99ad9484ecdf2f4' => $baseDir . '/src/cli.php',
+    '6392a3543a845b20b0ed35bafe19e5da' => $baseDir . '/src/games/check-fairness.php',
 );
