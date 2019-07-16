@@ -9,4 +9,5 @@ return array(
     'be01b9b16925dcb22165c40b46681ac6' => $vendorDir . '/wp-cli/php-cli-tools/lib/cli/cli.php',
     '8622eef84537a04da99ad9484ecdf2f4' => $baseDir . '/src/cli.php',
     '6392a3543a845b20b0ed35bafe19e5da' => $baseDir . '/src/games/check-fairness.php',
+    '0e8170bc5dde3072950daa22763fc3ae' => $baseDir . '/src/games/intro.php',
 );

@@ -10,6 +10,7 @@ class ComposerStaticInita9700f6bd40352d3cc7344d716841ee7
         'be01b9b16925dcb22165c40b46681ac6' => __DIR__ . '/..' . '/wp-cli/php-cli-tools/lib/cli/cli.php',
         '8622eef84537a04da99ad9484ecdf2f4' => __DIR__ . '/../..' . '/src/cli.php',
         '6392a3543a845b20b0ed35bafe19e5da' => __DIR__ . '/../..' . '/src/games/check-fairness.php',
+        '0e8170bc5dde3072950daa22763fc3ae' => __DIR__ . '/../..' . '/src/games/intro.php',
     );
 
     public static $prefixesPsr0 = array (

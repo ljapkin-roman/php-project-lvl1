@@ -16,7 +16,8 @@
     "autoload": {
       "files": [
           "src/cli.php",
-	  "src/games/check-fairness.php"
+	  "src/games/check-fairness.php",
+	  "src/games/intro.php"
       ]
     },
     "require-dev": {
