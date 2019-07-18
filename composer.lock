@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "239e92cfcc47fa3f5653e555c6d7ff25",
+    "content-hash": "ad404cd17f11728a62c2f40e4b2603dd",
     "packages": [
         {
             "name": "wp-cli/php-cli-tools",
