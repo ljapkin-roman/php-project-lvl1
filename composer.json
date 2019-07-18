@@ -17,7 +17,9 @@
       "files": [
           "src/cli.php",
 	  "src/games/check-fairness.php",
-	  "src/games/intro.php"
+	  "src/games/intro.php",
+	  "src/games/executeThreeTime.php",
+	  "src/games/calculator.php"
       ]
     },
     "require-dev": {
