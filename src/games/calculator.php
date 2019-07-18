@@ -25,6 +25,7 @@ function calculator()
 		return true;
 	} else {
 		line("'{$answerUser}' is wrong answer ;(. Correct answer was '{$correctAnswer}'");
+		line("Let's try again ");
 		return false;
 	}
 }

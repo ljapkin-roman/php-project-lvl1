@@ -6,4 +6,5 @@ use function BrainGames\MainEngine\executeThreeTime;
 use function \cli\line;
 use function BrainGames\Calculator\calculator;
 $name = intro();
+line("What is the result of the expression?");
 executeThreeTime('BrainGames\Calculator\calculator', $name);

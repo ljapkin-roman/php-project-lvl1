@@ -5,6 +5,6 @@ use function BrainGames\Intro\intro as intro;
 use function BrainGames\MainEngine\executeThreeTime;
 use function \cli\line;
 use function BrainGames\CheckFairness\yesOrNo as push;
-echo(__DIR__);
 $name = intro();
+line("Answer 'yes' if number even otherwise answer 'no'.");
 executeThreeTime('BrainGames\CheckFairness\yesOrNo', $name);
