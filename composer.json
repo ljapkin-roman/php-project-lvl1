@@ -11,7 +11,8 @@
         "wp-cli/php-cli-tools":"0.11.11"
     },
     "bin": [
-	    "bin/brain-games"
+	    "bin/brain-even",
+	    "bin/brain-calc"
     ],
     "autoload": {
       "files": [
