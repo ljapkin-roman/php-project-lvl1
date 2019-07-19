@@ -23,7 +23,7 @@ function greatest_common_divider($nameUser)
     }
     $correctAnswer = gcd($minorityNumber, $largerNumber);
     line("Question : {$minorityNumber} {$largerNumber}");
-    $userAnswer = intval(prompt("Your answer :"));
+    $userAnswer = intval(prompt("Your answer"));
     if ($correctAnswer === $userAnswer) {
         line("Correct!");
         return true;
