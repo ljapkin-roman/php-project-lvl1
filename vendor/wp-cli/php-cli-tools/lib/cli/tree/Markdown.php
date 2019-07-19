@@ -15,10 +15,12 @@ namespace cli\tree;
 /**
  * The ASCII renderer renders trees with ASCII lines.
  */
-class Markdown extends Renderer {
+class Markdown extends Renderer
+{
 
     /**
      * How many spaces to indent by
+     *
      * @var int
      */
     protected $_padding = 2;
@@ -28,8 +30,7 @@ class Markdown extends Renderer {
      */
     function __construct($padding = null)
     {
-        if ($padding)
-        {
+        if ($padding) {
             $this->_padding = $padding;
         }
     }
@@ -37,8 +38,8 @@ class Markdown extends Renderer {
     /**
      * Renders the tree
      *
-     * @param array $tree
-     * @param int $level Optional
+     * @param  array $tree
+     * @param  int   $level Optional
      * @return string
      */
     public function render(array $tree, $level = 0)
@@ -48,8 +49,7 @@ class Markdown extends Renderer {
         foreach ($tree as $label => $next)
         {
 
-            if (is_string($next))
-            {
+            if (is_string($next)) {
                 $label = $next;
             }
 
@@ -57,8 +57,7 @@ class Markdown extends Renderer {
             $output .= sprintf("%s- %s\n", str_repeat(' ', $level * $this->_padding), $label);
 
             // Next level
-            if (is_array($next))
-            {
+            if (is_array($next)) {
                 $output .= $this->render($next, $level + 1);
             }
 

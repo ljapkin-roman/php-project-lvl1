@@ -40,6 +40,7 @@ class TestMemberProperties
      * Comment here.
      *
      * @phpcs:ignore Standard.Category.Sniff -- because
+     *
      * @var boolean
      */
     public static $varH = true;
@@ -49,6 +50,7 @@ class TestMemberProperties
      * Comment here.
      *
      * @phpcs:ignore Standard.Category.Sniff -- because
+     *
      * @var boolean
      */
     static protected $varI = true;
@@ -58,6 +60,7 @@ class TestMemberProperties
      * Comment here.
      *
      * @phpcs:ignore Standard.Category.Sniff -- because
+     *
      * @var boolean
      */
     private static $varJ = true;
@@ -84,15 +87,16 @@ class TestMemberProperties
         $varS = ONE / self::THREE,
         /* testGroupPrivate 6 */
         $varT = [
-			'a' => 'a',
-			'b' => 'b'
-		],
+    'a' => 'a',
+    'b' => 'b'
+        ],
         /* testGroupPrivate 7 */
         $varU = __DIR__ . "/base";
 
 
     /* testMethodParam */
-    public function methodName($param) {
+    public function methodName($param)
+    {
         /* testImportedGlobal */
         global $importedGlobal = true;
 
@@ -118,19 +122,25 @@ $globalVariable = true;
 return;
 
 $a = ( $foo == $bar ? new stdClass() :
-	new class() {
-		/* testNestedProperty 1 */
-		public $var = true;
+    new class() {
+        /* testNestedProperty 1 */
+        public $var = true;
 
-		/* testNestedMethodParam 1 */
-		public function something($var = false) {}
-	}
+        /* testNestedMethodParam 1 */
+        public function something($var = false)
+        {
+        }
+    }
 );
 
-function_call( 'param', new class {
-	/* testNestedProperty 2 */
-	public $year = 2017;
+function_call(
+    'param', new class {
+        /* testNestedProperty 2 */
+        public $year = 2017;
 
-	/* testNestedMethodParam 2 */
-	public function __construct( $open, $post_id ) {}
-}, 10, 2 );
+        /* testNestedMethodParam 2 */
+        public function __construct( $open, $post_id )
+        {
+        }
+    }, 10, 2 
+);

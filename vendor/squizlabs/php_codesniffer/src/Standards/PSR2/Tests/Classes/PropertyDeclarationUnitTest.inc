@@ -31,13 +31,14 @@ qux
 BAZ;
 }
 
-class ABC {
+class ABC
+{
     public static $propA;
     protected static $propB;
     private static $propC;
     static public $propD;
     static
-        protected
+    protected
             $propE;
     static private    /*comment*/   $propF;
 }

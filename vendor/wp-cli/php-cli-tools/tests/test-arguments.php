@@ -4,6 +4,7 @@ use cli\Arguments;
 
 /**
  * Class TestArguments
+ *
  * @todo add more tests to increase coverage
  *
  * @backupGlobals enabled
@@ -12,18 +13,21 @@ class TestArguments extends PHPUnit_Framework_TestCase
 {
     /**
      * Array of expected settings
+     *
      * @var array
      */
     protected $settings = null;
 
     /**
      * Array of flags
+     *
      * @var array
      */
     protected $flags = null;
 
     /**
      * Array of expected options
+     *
      * @var array
      */
     protected $options = null;
@@ -40,7 +44,7 @@ class TestArguments extends PHPUnit_Framework_TestCase
     /**
      * Add one or more element(s) at the end of the $_SERVER['argv'] array
      *
-     * @param  array $args: value(s) to add to the argv array
+     * @param array $args: value(s) to add to the argv array
      */
     public static function pushToArgv($args)
     {
@@ -219,8 +223,8 @@ class TestArguments extends PHPUnit_Framework_TestCase
     /**
      * Generic private testParse method.
      *
-     * @param  array $args           arguments as they appear in the cli
-     * @param  array $expectedValues expected values after parsing
+     * @param array $args           arguments as they appear in the cli
+     * @param array $expectedValues expected values after parsing
      */
     private function _testParse($cliParams, $expectedValues)
     {
@@ -241,8 +245,8 @@ class TestArguments extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param  array $args           arguments as they appear in the cli
-     * @param  array $expectedValues expected values after parsing
+     * @param array $args           arguments as they appear in the cli
+     * @param array $expectedValues expected values after parsing
      *
      * @dataProvider settingsWithValidOptions
      */
@@ -252,10 +256,10 @@ class TestArguments extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param  array $args           arguments as they appear in the cli
-     * @param  array $expectedValues expected values after parsing
-     * @dataProvider settingsWithMissingOptions
-     * @expectedException PHPUnit_Framework_Error_Warning
+     * @param                    array $args           arguments as they appear in the cli
+     * @param                    array $expectedValues expected values after parsing
+     * @dataProvider             settingsWithMissingOptions
+     * @expectedException        PHPUnit_Framework_Error_Warning
      * @expectedExceptionMessage no value given for --option1
      */
     public function testParseWithMissingOptions($cliParams, $expectedValues)
@@ -264,8 +268,8 @@ class TestArguments extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param  array $args           arguments as they appear in the cli
-     * @param  array $expectedValues expected values after parsing
+     * @param        array $args           arguments as they appear in the cli
+     * @param        array $expectedValues expected values after parsing
      * @dataProvider settingsWithMissingOptionsWithDefault
      */
     public function testParseWithMissingOptionsWithDefault($cliParams, $expectedValues)
@@ -274,11 +278,12 @@ class TestArguments extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param  array $args           arguments as they appear in the cli
-     * @param  array $expectedValues expected values after parsing
+     * @param        array $args           arguments as they appear in the cli
+     * @param        array $expectedValues expected values after parsing
      * @dataProvider settingsWithNoOptionsWithDefault
      */
-    public function testParseWithNoOptionsWithDefault($cliParams, $expectedValues) {
+    public function testParseWithNoOptionsWithDefault($cliParams, $expectedValues)
+    {
         $this->_testParse($cliParams, $expectedValues);
     }
 }

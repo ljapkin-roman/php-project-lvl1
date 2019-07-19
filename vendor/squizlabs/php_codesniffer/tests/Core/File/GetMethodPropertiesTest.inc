@@ -1,48 +1,73 @@
 <?php
 
 /* testBasicFunction */
-function myFunction() {}
+function myFunction()
+{
+}
 
 /* testReturnFunction */
 function myFunction(array ...$arrays): array
 {
-    return array_map(/* testNestedClosure */function(array $array): int {
-        return array_sum($array);
-    }, $arrays);
+    return array_map(
+        /* testNestedClosure */function (array $array): int {
+            return array_sum($array);
+        }, $arrays
+    );
 }
 
-class MyClass {
+class MyClass
+{
     /* testBasicMethod */
-    function myFunction() {}
+    function myFunction()
+    {
+    }
 
     /* testPrivateStaticMethod */
-    private static function myFunction() {}
+    private static function myFunction()
+    {
+    }
 
     /* testFinalMethod */
-    final public function myFunction() {}
+    final public function myFunction()
+    {
+    }
 
     /* testProtectedReturnMethod */
-    protected function myFunction() : int {}
+    protected function myFunction() : int
+    {
+    }
 
     /* testPublicReturnMethod */
-    public function myFunction(): array {}
+    public function myFunction(): array
+    {
+    }
 
     /* testNullableReturnMethod */
-    public function myFunction(): ?array {}
+    public function myFunction(): ?array
+    {
+    }
 
     /* testMessyNullableReturnMethod */
     public function myFunction() /* comment
         */ :  
         /* comment */ ? //comment
-        array {}
+        array
+    {
+    }
 
     /* testReturnNamespace */
-    function myFunction(): \MyNamespace\MyClass {}
+    function myFunction(): \MyNamespace\MyClass
+    {
+    }
 
     /* testReturnMultilineNamespace */
-    function myFunction(): \MyNamespace /** comment *\/ comment */
+    function myFunction(): \MyNamespace /**
+ * comment *\/ comment 
+*/
                            \MyClass /* comment */
-                           \Foo {}
+                           \Foo
+    {
+    }
 }
 
 abstract class MyClass

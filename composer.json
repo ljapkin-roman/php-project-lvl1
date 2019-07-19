@@ -20,7 +20,8 @@
 	  "src/games/check-fairness.php",
 	  "src/games/intro.php",
 	  "src/games/executeThreeTime.php",
-	  "src/games/calculator.php"
+	  "src/games/calculator.php",
+	  "src/games/greatest-common-divider.php"
       ]
     },
     "require-dev": {

@@ -1,18 +1,17 @@
 <?php
 
-class MyClass {
+class MyClass
+{
     public function validNullableTypeHinting(
         ?array $array = null,
         ?MyObject $object
-    ): ?MyObject
-    {
+    ): ?MyObject {
     }
 
     public function validWithFQN(
         ?\MyNameSpace\MyArray $array = null,
         ?\MyNameSpace\MyObject $object
-    ): ?\MyNameSpace\MyObject
-    {
+    ): ?\MyNameSpace\MyObject {
     }
 
     public function validReturnTypeForThisSniff():?MyObject
@@ -22,29 +21,32 @@ class MyClass {
     public function invalidTooMuchWhitespace(
         ? array $array = null,
         ? MyObject
-    ):? MyObject
-    {
+    ):? MyObject {
     }
 
     public function invalidWithFQNTooMuchWhitespace(
         ? \MyNameSpace\MyArray $array = null,
         ? \MyNameSpace\MyObject
-    ):? \MyNameSpace\MyObject
-    {
+    ):? \MyNameSpace\MyObject {
     }
 }
 
 // valid in lambda
-array_map(function(?int $integer = null): ?int {
-    return $integer;
-}, []);
+array_map(
+    function (?int $integer = null): ?int {
+        return $integer;
+    }, []
+);
 
 // invalid in lambda
-array_map(function(? int $integer = null): ? int {
-    return $integer;
-}, []);
+array_map(
+    function (? int $integer = null): ? int {
+        return $integer;
+    }, []
+);
 
-interface MyInterface {
+interface MyInterface
+{
     public function invalidTypeHintsWithNewlinesAndComments( ?
         string $varA,
         ? /* a comment, fixing is undesirable */ array $varB,
@@ -54,6 +56,12 @@ interface MyInterface {
         bool;
 }
 
-function testSelf( ? self $self ) : ? self {}
-function testParent( ? parent $parent ) : ? parent {}
-function testCallable( ? callable $callable ) : ? callable {}
+function testSelf( ? self $self ) : ? self
+{
+}
+function testParent( ? parent $parent ) : ? parent
+{
+}
+function testCallable( ? callable $callable ) : ? callable
+{
+}
