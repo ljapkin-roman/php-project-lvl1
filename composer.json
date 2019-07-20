@@ -11,9 +11,9 @@
         "wp-cli/php-cli-tools":"0.11.11"
     },
     "bin": [
-	    "./brain-even",
-	    "./brain-calc",
-	    "./brain-gcd"
+	    "bin/brain-gcd",
+	    "bin/brain-even",
+	    "bin/brain-calc"
     ],
     "autoload": {
       "files": [
