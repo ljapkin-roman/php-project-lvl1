@@ -13,4 +13,5 @@ return array(
     '8f03f3d3a613920e71d1c90971061a3a' => $baseDir . '/src/games/executeThreeTime.php',
     'f5a37fe41763088eb8a483acf99ef66f' => $baseDir . '/src/games/calculator.php',
     'a0a4424e18a918909f02dc0d8b9e2bc7' => $baseDir . '/src/games/greatest-common-divider.php',
+    '3fe518edeba41c6090158dd72a983b12' => $baseDir . '/src/games/progression.php',
 );

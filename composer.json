@@ -22,7 +22,8 @@
 	  "src/games/intro.php",
 	  "src/games/executeThreeTime.php",
 	  "src/games/calculator.php",
-	  "src/games/greatest-common-divider.php"
+	  "src/games/greatest-common-divider.php",
+	  "src/games/progression.php"
       ]
     },
     "require-dev": {

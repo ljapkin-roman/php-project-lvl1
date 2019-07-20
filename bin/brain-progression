@@ -1,0 +1,9 @@
+#!/usr/bin/php
+<?php
+require __DIR__ . '/../vendor/autoload.php';
+use function BrainGames\Intro\intro as intro;
+use function BrainGames\MainEngine\executeThreeTime;
+use function \cli\line;
+use function BrainGames\Progression\progression;
+$name = intro();
+executeThreeTime('BrainGames\Progression\progression', $name);
