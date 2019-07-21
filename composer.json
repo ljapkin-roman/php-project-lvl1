@@ -11,10 +11,10 @@
         "wp-cli/php-cli-tools":"0.11.11"
     },
     "bin": [
-	    "bin/brain-prime",
 	    "bin/brain-progression",
 	    "bin/brain-gcd",
 	    "bin/brain-even",
+	    "bin/brain-prime",
 	    "bin/brain-calc"
     ],
     "autoload": {
