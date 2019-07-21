@@ -6,7 +6,7 @@ function prime($nameUser)
 {
     $correctAnswer;
     $offerNumber = rand(2, 1000);
-    for ($i = 2;$i < round($offerNumber/2); $i++) {
+    for ($i = 2; $i < round($offerNumber / 2); $i++) {
         if ($offerNumber % $i === 0) {
             $correctAnswer = "no";
             break;
@@ -22,6 +22,4 @@ function prime($nameUser)
         line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'");
         line("Let's try again {$nameUser}");
     }
-
 }
-

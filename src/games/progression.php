@@ -8,15 +8,15 @@ function progression($nameUser)
     $sizeIncrementalStep = rand(1, 10);
     $startPoint = rand(1, 100);
     $progresValues = "";
-    for ($i = 1;$i < 11;$i++) {
+    for ($i = 1; $i < 11; $i++) {
         if ($sizeIncrementalStep !== $i) {
-            $progresValues .= " " .($startPoint + $i * $sizeIncrementalStep);    
+            $progresValues .= " " . ($startPoint + $i * $sizeIncrementalStep);
         } else {
             $correctAnswer = $startPoint + $i * $sizeIncrementalStep;
-            $progresValues .=" ". ".." . " ";
+            $progresValues .= " " . ".." . " ";
         }
     }
-    line("Question :"."{$progresValues}\n");
+    line("Question :" . "{$progresValues}\n");
     $userAnswer = intval(prompt("Your answer"));
     if ($userAnswer === $correctAnswer) {
         line("Correct!\n");

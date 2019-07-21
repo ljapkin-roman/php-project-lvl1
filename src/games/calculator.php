@@ -29,5 +29,3 @@ function calculator($nameUser)
         return false;
     }
 }
-
-?>
