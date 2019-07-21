@@ -14,6 +14,7 @@ class ComposerStaticInita9700f6bd40352d3cc7344d716841ee7
         '8f03f3d3a613920e71d1c90971061a3a' => __DIR__ . '/../..' . '/src/games/executeThreeTime.php',
         'f5a37fe41763088eb8a483acf99ef66f' => __DIR__ . '/../..' . '/src/games/calculator.php',
         'a0a4424e18a918909f02dc0d8b9e2bc7' => __DIR__ . '/../..' . '/src/games/greatest-common-divider.php',
+        'a435a7a29f07837c5a9730bf973e9729' => __DIR__ . '/../..' . '/src/games/prime.php',
         '3fe518edeba41c6090158dd72a983b12' => __DIR__ . '/../..' . '/src/games/progression.php',
     );
 

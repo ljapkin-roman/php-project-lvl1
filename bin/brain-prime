@@ -1,0 +1,10 @@
+#!/usr/bin/php
+<?php
+require __DIR__ . '/../vendor/autoload.php';
+use function BrainGames\Intro\intro as intro;
+use function BrainGames\MainEngine\executeThreeTime;
+use function \cli\line;
+use function BrainGames\Prime\prime;
+$name = intro();
+line("Enter 'yes' if number is prime otherwise 'no'");
+executeThreeTime('BrainGames\Prime\prime', $name);
