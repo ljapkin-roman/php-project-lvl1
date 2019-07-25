@@ -1,5 +1,5 @@
 <?php
-namespace BrainGames\Progression;
+namespace BrainGames\Progression; 
 use function \cli\line;
 use function \cli\prompt;
 function progression($nameUser)
