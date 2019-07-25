@@ -39,13 +39,13 @@
             "authors": [
                 {
                     "name": "James Logsdon",
-                    "email": "jlogsdon@php.net",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "jlogsdon@php.net"
                 },
                 {
                     "name": "Daniel Bachhuber",
-                    "email": "daniel@handbuilt.co",
-                    "role": "Maintainer"
+                    "role": "Maintainer",
+                    "email": "daniel@handbuilt.co"
                 }
             ],
             "description": "Console utilities for PHP",

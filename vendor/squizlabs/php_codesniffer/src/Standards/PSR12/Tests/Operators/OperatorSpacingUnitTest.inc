@@ -13,9 +13,7 @@ $foo = ~$a;
 $foo   *=$a<<$b;
 $foo = $a>>$b;
 
-function foo(&$a,& $b)
-{
-}
+function foo(&$a,& $b) {}
 
 $foo = $a   and$b;
 $foo = $a or   $b;

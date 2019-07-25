@@ -4,13 +4,13 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita9700f6bd40352d3cc7344d716841ee7
+class ComposerStaticInitc8da18a275a2cd0d789eead88da9503e
 {
     public static $files = array (
         'be01b9b16925dcb22165c40b46681ac6' => __DIR__ . '/..' . '/wp-cli/php-cli-tools/lib/cli/cli.php',
         '8622eef84537a04da99ad9484ecdf2f4' => __DIR__ . '/../..' . '/src/cli.php',
+        '509e9db2f50a71eefd1c60abc3ea670f' => __DIR__ . '/../..' . '/src/engine.php',
         '6392a3543a845b20b0ed35bafe19e5da' => __DIR__ . '/../..' . '/src/games/check-fairness.php',
-        '0e8170bc5dde3072950daa22763fc3ae' => __DIR__ . '/../..' . '/src/games/intro.php',
         '8f03f3d3a613920e71d1c90971061a3a' => __DIR__ . '/../..' . '/src/games/executeThreeTime.php',
         'f5a37fe41763088eb8a483acf99ef66f' => __DIR__ . '/../..' . '/src/games/calculator.php',
         'a0a4424e18a918909f02dc0d8b9e2bc7' => __DIR__ . '/../..' . '/src/games/greatest-common-divider.php',
@@ -31,7 +31,7 @@ class ComposerStaticInita9700f6bd40352d3cc7344d716841ee7
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixesPsr0 = ComposerStaticInita9700f6bd40352d3cc7344d716841ee7::$prefixesPsr0;
+            $loader->prefixesPsr0 = ComposerStaticInitc8da18a275a2cd0d789eead88da9503e::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }

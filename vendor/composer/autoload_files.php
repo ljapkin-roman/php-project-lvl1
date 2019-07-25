@@ -8,8 +8,8 @@ $baseDir = dirname($vendorDir);
 return array(
     'be01b9b16925dcb22165c40b46681ac6' => $vendorDir . '/wp-cli/php-cli-tools/lib/cli/cli.php',
     '8622eef84537a04da99ad9484ecdf2f4' => $baseDir . '/src/cli.php',
+    '509e9db2f50a71eefd1c60abc3ea670f' => $baseDir . '/src/engine.php',
     '6392a3543a845b20b0ed35bafe19e5da' => $baseDir . '/src/games/check-fairness.php',
-    '0e8170bc5dde3072950daa22763fc3ae' => $baseDir . '/src/games/intro.php',
     '8f03f3d3a613920e71d1c90971061a3a' => $baseDir . '/src/games/executeThreeTime.php',
     'f5a37fe41763088eb8a483acf99ef66f' => $baseDir . '/src/games/calculator.php',
     'a0a4424e18a918909f02dc0d8b9e2bc7' => $baseDir . '/src/games/greatest-common-divider.php',

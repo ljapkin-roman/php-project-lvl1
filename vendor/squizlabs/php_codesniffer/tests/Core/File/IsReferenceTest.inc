@@ -3,7 +3,7 @@
 namespace PHP_CodeSniffer\Tests\Core\File;
 
 /* bitwiseAndA */
-error_reporting(E_NOTICE & E_STRICT);
+error_reporting( E_NOTICE & E_STRICT );
 
 /* bitwiseAndB */
 $a = [ $something & $somethingElse ];
@@ -24,58 +24,40 @@ $a = array( 'a' => $first, 'b' => $something & \MyClass::$somethingElse );
 $a = $something & $somethingElse;
 
 /* bitwiseAndH */
-function myFunction($a = 10 & 20)
-{
-}
+function myFunction($a = 10 & 20) {}
 
 /* bitwiseAndI */
-$closure = function ($a = MY_CONSTANT & parent::OTHER_CONSTANT) {
-};
+$closure = function ($a = MY_CONSTANT & parent::OTHER_CONSTANT) {};
 
 /* functionReturnByReference */
-function &myFunction()
-{
-}
+function &myFunction() {}
 
 /* functionPassByReferenceA */
-function myFunction( &$a )
-{
-}
+function myFunction( &$a ) {}
 
 /* functionPassByReferenceB */
-function myFunction( $a, &$b )
-{
-}
+function myFunction( $a, &$b ) {}
 
 /* functionPassByReferenceC */
-$closure = function ( &$a ) {
-};
+$closure = function ( &$a ) {};
 
 /* functionPassByReferenceD */
-$closure = function ( $a, &$b ) {
-};
+$closure = function ( $a, &$b ) {};
 
 /* functionPassByReferenceE */
-function myFunction(array &$one)
-{
-}
+function myFunction(array &$one) {}
 
 /* functionPassByReferenceF */
-$closure = function (\MyClass &$one) {
-};
+$closure = function (\MyClass &$one) {};
 
 /* functionPassByReferenceG */
-$closure = function myFunc($param, &...$moreParams)
-{
-};
+$closure = function myFunc($param, &...$moreParams) {};
 
 /* foreachValueByReference */
-foreach( $array as $key => &$value ) {
-}
+foreach( $array as $key => &$value ) {}
 
 /* foreachKeyByReference */
-foreach( $array as &$key => $value ) {
-}
+foreach( $array as &$key => $value ) {}
 
 /* arrayValueByReferenceA */
 $a = [ 'a' => &$something ];
@@ -150,8 +132,7 @@ functionCall($something, &namespace\SomeClass::$somethingElse);
 $foobar2 = &new Foobar();
 
 /* newByReferenceB */
-functionCall($something, &new Foobar());
+functionCall( $something , &new Foobar() );
 
 /* useByReference */
-$closure = function () use (&$var) {
-};
+$closure = function() use (&$var){};
