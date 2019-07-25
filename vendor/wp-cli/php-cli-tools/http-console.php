@@ -11,19 +11,16 @@ define('SCRIPT_NAME', array_shift($argv));
 require_once BUZZ_PATH . '/lib/Buzz/ClassLoader.php';
 Buzz\ClassLoader::register();
 
-class HttpConsole
-{
+class HttpConsole {
     protected $_host;
     protected $_prompt;
 
-    public function __construct($host)
-    {
+    public function __construct($host) {
         $this->_host = 'http://' . $host;
         $this->_prompt = '%K' . $this->_host . '%n/%K>%n ';
     }
 
-    public function handleRequest($type, $path)
-    {
+    public function handleRequest($type, $path) {
         $request = new Buzz\Message\Request($type, $path, $this->_host);
         $response = new Buzz\Message\Response;
 
@@ -47,8 +44,7 @@ class HttpConsole
         }
     }
 
-    public function run()
-    {
+    public function run() {
         while (true) {
             $cmd = \cli\prompt($this->_prompt, false, null);
 

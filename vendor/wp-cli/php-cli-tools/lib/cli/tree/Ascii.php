@@ -15,11 +15,10 @@ namespace cli\tree;
 /**
  * The ASCII renderer renders trees with ASCII lines.
  */
-class Ascii extends Renderer
-{
+class Ascii extends Renderer {
 
     /**
-     * @param  array $tree
+     * @param array $tree
      * @return string
      */
     public function render(array $tree)

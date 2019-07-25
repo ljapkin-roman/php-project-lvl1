@@ -14,7 +14,8 @@ function yesOrNo()
             line("Correct!");
             return true;
         } else {
-            line("\"{$answerUser}\" is wrong answer ;l(. Correct answer was \"{$correctResponse}\". Let's try again, {$name}!");
+            line("\"{$answerUser}\" is wrong answer ;l(. Correct answer was \"{$correctResponse}\". 
+			Let's try again, {$name}!");
             return false;
         }
     } else {

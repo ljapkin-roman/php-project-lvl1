@@ -11,50 +11,46 @@ use cli\Colors;
  * Acceptance tests for ASCII table drawing.
  * It will redirect STDOUT to temporary file and check that output matches with expected
  */
-class Test_Table_Ascii extends PHPUnit_Framework_TestCase
-{
-    /**
-     * @var string Path to temporary file, where STDOUT output will be redirected during tests
-     */
-    private $_mockFile;
-    /**
-     * @var \cli\Table Instance
-     */
-    private $_instance;
+class Test_Table_Ascii extends PHPUnit_Framework_TestCase {
+	/**
+	 * @var string Path to temporary file, where STDOUT output will be redirected during tests
+	 */
+	private $_mockFile;
+	/**
+	 * @var \cli\Table Instance
+	 */
+	private $_instance;
 
-    /**
-     * Creates instance and redirects STDOUT to temporary file
-     */
-    public function setUp()
-    {
-        $this->_mockFile = tempnam(sys_get_temp_dir(), 'temp');
-        $resource = fopen($this->_mockFile, 'wb');
-        Streams::setStream('out', $resource);
+	/**
+	 * Creates instance and redirects STDOUT to temporary file
+	 */
+	public function setUp() {
+		$this->_mockFile = tempnam(sys_get_temp_dir(), 'temp');
+		$resource = fopen($this->_mockFile, 'wb');
+		Streams::setStream('out', $resource);
 
-        $this->_instance = new Table();
-        $this->_instance->setRenderer(new Ascii());
-    }
+		$this->_instance = new Table();
+		$this->_instance->setRenderer(new Ascii());
+	}
 
-    /**
-     * Cleans temporary file
-     */
-    public function tearDown()
-    {
-        if (file_exists($this->_mockFile)) {
-            unlink($this->_mockFile);
-        }
-    }
+	/**
+	 * Cleans temporary file
+	 */
+	public function tearDown() {
+		if (file_exists($this->_mockFile)) {
+			unlink($this->_mockFile);
+		}
+	}
 
-    /**
-     * Draw simple One column table
-     */
-    public function testDrawOneColumnTable()
-    {
-        $headers = array('Test Header');
-        $rows = array(
-        array('x'),
-        );
-        $output = <<<'OUT'
+	/**
+	 * Draw simple One column table
+	 */
+	public function testDrawOneColumnTable() {
+		$headers = array('Test Header');
+		$rows = array(
+			array('x'),
+		);
+		$output = <<<'OUT'
 +-------------+
 | Test Header |
 +-------------+
@@ -62,31 +58,30 @@ class Test_Table_Ascii extends PHPUnit_Framework_TestCase
 +-------------+
 
 OUT;
-        $this->assertInOutEquals(array($headers, $rows), $output);
-    }
+		$this->assertInOutEquals(array($headers, $rows), $output);
+	}
 
-    /**
-     * Draw simple One column table with colored string
-     * Output should look like:
-     * +-------------+
-     * | Test Header |
-     * +-------------+
-     * | x           |
-     * +-------------+
-     *
-     * where `x` character has green color.
-     * At the same time it checks that `green` defined in `cli\Colors` really looks as `green`.
-     */
-    public function testDrawOneColumnColoredTable()
-    {
-        Colors::enable(true);
-        $headers = array('Test Header');
-        $rows = array(
-        array(Colors::colorize('%Gx%n', true)),
-        );
-        // green `x`
-        $x = "\x1B\x5B\x33\x32\x3B\x31\x6Dx\x1B\x5B\x30\x6D";
-        $output = <<<OUT
+	/**
+	 * Draw simple One column table with colored string
+	 * Output should look like:
+	 * +-------------+
+	 * | Test Header |
+	 * +-------------+
+	 * | x           |
+	 * +-------------+
+	 *
+	 * where `x` character has green color.
+	 * At the same time it checks that `green` defined in `cli\Colors` really looks as `green`.
+	 */
+	public function testDrawOneColumnColoredTable() {
+		Colors::enable( true );
+		$headers = array('Test Header');
+		$rows = array(
+			array(Colors::colorize('%Gx%n', true)),
+		);
+		// green `x`
+		$x = "\x1B\x5B\x33\x32\x3B\x31\x6Dx\x1B\x5B\x30\x6D";
+		$output = <<<OUT
 +-------------+
 | Test Header |
 +-------------+
@@ -94,21 +89,20 @@ OUT;
 +-------------+
 
 OUT;
-        $this->assertInOutEquals(array($headers, $rows), $output);
-    }
+		$this->assertInOutEquals(array($headers, $rows), $output);
+	}
 
-    /**
-     * Check it works with colors disabled.
-     */
-    public function testDrawOneColumnColorDisabledTable()
-    {
-        Colors::disable(true);
-        $this->assertFalse(Colors::shouldColorize());
-        $headers = array('Test Header');
-        $rows = array(
-        array('%Gx%n'),
-        );
-        $output = <<<OUT
+	/**
+	 * Check it works with colors disabled.
+	 */
+	public function testDrawOneColumnColorDisabledTable() {
+		Colors::disable( true );
+		$this->assertFalse( Colors::shouldColorize() );
+		$headers = array('Test Header');
+		$rows = array(
+			array('%Gx%n'),
+		);
+		$output = <<<OUT
 +-------------+
 | Test Header |
 +-------------+
@@ -116,20 +110,19 @@ OUT;
 +-------------+
 
 OUT;
-        $this->assertInOutEquals(array($headers, $rows), $output);
-    }
+		$this->assertInOutEquals(array($headers, $rows), $output);
+	}
 
-    /**
-     * Checks that spacing and borders are handled correctly in table
-     */
-    public function testSpacingInTable()
-    {
-        $headers = array('A', '    ', 'C', '');
-        $rows = array(
-        array('     ', 'B1', '', 'D1'),
-        array('A2', '', ' C2', null),
-        );
-        $output = <<<'OUT'
+	/**
+	 * Checks that spacing and borders are handled correctly in table
+	 */
+	public function testSpacingInTable() {
+		$headers = array('A', '    ', 'C', '');
+		$rows = array(
+			array('     ', 'B1', '', 'D1'),
+			array('A2', '', ' C2', null),
+		);
+		$output = <<<'OUT'
 +-------+------+-----+----+
 | A     |      | C   |    |
 +-------+------+-----+----+
@@ -138,19 +131,18 @@ OUT;
 +-------+------+-----+----+
 
 OUT;
-        $this->assertInOutEquals(array($headers, $rows), $output);
-    }
+		$this->assertInOutEquals(array($headers, $rows), $output);
+	}
 
-    /**
-     * Test correct table indentation and border positions for multibyte strings
-     */
-    public function testTableWithMultibyteStrings()
-    {
-        $headers = array('German', 'French', 'Russian', 'Chinese');
-        $rows = array(
-        array('Schätzen', 'Apprécier', 'Оценить', '欣賞'),
-        );
-        $output = <<<'OUT'
+	/**
+	 * Test correct table indentation and border positions for multibyte strings
+	 */
+	public function testTableWithMultibyteStrings() {
+		$headers = array('German', 'French', 'Russian', 'Chinese');
+		$rows = array(
+			array('Schätzen', 'Apprécier', 'Оценить', '欣賞'),
+		);
+		$output = <<<'OUT'
 +----------+-----------+---------+---------+
 | German   | French    | Russian | Chinese |
 +----------+-----------+---------+---------+
@@ -158,19 +150,18 @@ OUT;
 +----------+-----------+---------+---------+
 
 OUT;
-        $this->assertInOutEquals(array($headers, $rows), $output);
-    }
+		$this->assertInOutEquals(array($headers, $rows), $output);
+	}
 
-    /**
-     * Test that % gets escaped correctly.
-     */
-    public function testTableWithPercentCharacters()
-    {
-        $headers = array( 'Heading', 'Heading2', 'Heading3' );
-        $rows = array(
-        array( '% at start', 'at end %', 'in % middle' )
-        );
-        $output = <<<'OUT'
+	/**
+	 * Test that % gets escaped correctly.
+	 */
+	public function testTableWithPercentCharacters() {
+		$headers = array( 'Heading', 'Heading2', 'Heading3' );
+		$rows = array(
+			array( '% at start', 'at end %', 'in % middle' )
+		);
+		$output = <<<'OUT'
 +------------+----------+-------------+
 | Heading    | Heading2 | Heading3    |
 +------------+----------+-------------+
@@ -178,28 +169,27 @@ OUT;
 +------------+----------+-------------+
 
 OUT;
-        $this->assertInOutEquals(array($headers, $rows), $output);
-    }
+		$this->assertInOutEquals(array($headers, $rows), $output);
+	}
 
-    /**
-     * Test that a % is appropriately padded in the table
-     */
-    public function testTablePaddingWithPercentCharacters()
-    {
-        $headers = array( 'ID', 'post_title', 'post_name' );
-        $rows = array(
-        array(
-        3,
-        '10%',
-        ''
-        ),
-        array(
-        1,
-        'Hello world!',
-        'hello-world'
-        ),
-        );
-        $output = <<<'OUT'
+	/**
+	 * Test that a % is appropriately padded in the table
+	 */
+	public function testTablePaddingWithPercentCharacters() {
+		$headers = array( 'ID', 'post_title', 'post_name' );
+		$rows = array(
+			array(
+				3,
+				'10%',
+				''
+			),
+			array(
+				1,
+				'Hello world!',
+				'hello-world'
+			),
+		);
+		$output = <<<'OUT'
 +----+--------------+-------------+
 | ID | post_title   | post_name   |
 +----+--------------+-------------+
@@ -208,22 +198,21 @@ OUT;
 +----+--------------+-------------+
 
 OUT;
-        $this->assertInOutEquals(array($headers, $rows), $output);
-    }
+		$this->assertInOutEquals(array($headers, $rows), $output);
+	}
 
-    /**
-     * Draw wide multiplication Table.
-     * Example with many columns, many rows
-     */
-    public function testDrawMultiplicationTable()
-    {
-        $maxFactor = 16;
-        $headers = array_merge(array('x'), range(1, $maxFactor));
-        for ($i = 1, $rows = array(); $i <= $maxFactor; ++$i) {
-            $rows[] = array_merge(array($i), range($i, $i * $maxFactor, $i));
-        }
+	/**
+	 * Draw wide multiplication Table.
+	 * Example with many columns, many rows
+	 */
+	public function testDrawMultiplicationTable() {
+		$maxFactor = 16;
+		$headers = array_merge(array('x'), range(1, $maxFactor));
+		for ($i = 1, $rows = array(); $i <= $maxFactor; ++$i) {
+			$rows[] = array_merge(array($i), range($i, $i * $maxFactor, $i));
+		}
 
-        $output = <<<'OUT'
+		$output = <<<'OUT'
 +----+----+----+----+----+----+----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
 | x  | 1  | 2  | 3  | 4  | 5  | 6  | 7   | 8   | 9   | 10  | 11  | 12  | 13  | 14  | 15  | 16  |
 +----+----+----+----+----+----+----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
@@ -246,48 +235,45 @@ OUT;
 +----+----+----+----+----+----+----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
 
 OUT;
-        $this->assertInOutEquals(array($headers, $rows), $output);
-    }
+		$this->assertInOutEquals(array($headers, $rows), $output);
+	}
 
-    /**
-     * Draw a table with headers but no data
-     */
-    public function testDrawWithHeadersNoData()
-    {
-        $headers = array('header 1', 'header 2');
-        $rows = array();
-        $output = <<<'OUT'
+	/**
+	 * Draw a table with headers but no data
+	 */
+	public function testDrawWithHeadersNoData() {
+		$headers = array('header 1', 'header 2');
+		$rows = array();
+		$output = <<<'OUT'
 +----------+----------+
 | header 1 | header 2 |
 +----------+----------+
 +----------+----------+
 
 OUT;
-        $this->assertInOutEquals(array($headers, $rows), $output);
-    }
+		$this->assertInOutEquals(array($headers, $rows), $output);
+	}
 
-    /**
-     * Verifies that Input and Output equals,
-     * Sugar method for fast access from tests
-     *
-     * @param array $input  First element is header array, second element is rows array
-     * @param mixed $output Expected output
-     */
-    private function assertInOutEquals(array $input, $output)
-    {
-        $this->_instance->setHeaders($input[0]);
-        $this->_instance->setRows($input[1]);
-        $this->_instance->display();
-        $this->assertOutFileEqualsWith($output);
-    }
+	/**
+	 * Verifies that Input and Output equals,
+	 * Sugar method for fast access from tests
+	 *
+	 * @param array $input First element is header array, second element is rows array
+	 * @param mixed $output Expected output
+	 */
+	private function assertInOutEquals(array $input, $output) {
+		$this->_instance->setHeaders($input[0]);
+		$this->_instance->setRows($input[1]);
+		$this->_instance->display();
+		$this->assertOutFileEqualsWith($output);
+	}
 
-    /**
-     * Checks that contents of input string and temporary file match
-     *
-     * @param mixed $expected Expected output
-     */
-    private function assertOutFileEqualsWith($expected)
-    {
-        $this->assertEquals($expected, file_get_contents($this->_mockFile));
-    }
+	/**
+	 * Checks that contents of input string and temporary file match
+	 *
+	 * @param mixed $expected Expected output
+	 */
+	private function assertOutFileEqualsWith($expected) {
+		$this->assertEquals($expected, file_get_contents($this->_mockFile));
+	}
 }

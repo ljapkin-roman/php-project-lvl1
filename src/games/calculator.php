@@ -2,7 +2,9 @@
 namespace BrainGames\Calculator;
 use function \cli\line;
 use function \cli\prompt;
-function calculator($nameUser)
+use function BrainGames\Engine\engine;
+
+function calculator($userName)
 {
     $correctAnswer = 0;
     $operationSign = ["+", "-", "*"];
@@ -25,9 +27,11 @@ function calculator($nameUser)
         return true;
     } else {
         line("'{$answerUser}' is wrong answer ;(. Correct answer was '{$correctAnswer}'");
-        line("Let's try again {$nameUser}");
+        line("Let's try again {$userName}");
         return false;
     }
 }
+function launch() {
+	engine('BrainGames\Calculator\calculator', 'What is the result of the expression?');
 
-?>
+}

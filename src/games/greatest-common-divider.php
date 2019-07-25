@@ -8,7 +8,7 @@ function gcd($min, $max)
         return $min;
     }
     $rest = $max % $min;
-    if ($max % $rest === 0 && $min % $rest === 0 ) {
+    if ($max % $rest === 0 && $min % $rest === 0) {
         return $rest;
     } else {
         return gcd($rest, $min);
@@ -33,4 +33,3 @@ function greatest_common_divider($nameUser)
         return false;
     }
 }
-

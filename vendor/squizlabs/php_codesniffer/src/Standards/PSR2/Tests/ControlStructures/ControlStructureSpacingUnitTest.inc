@@ -17,32 +17,30 @@ while (true) {
 }
 
 if ($defaultPageDesign === 0
-    && $defaultCascade === true
+    && $defaultCascade === TRUE
     && $defaultChildDesign === 0
 ) {
-    $settingsUpdated = false;
+    $settingsUpdated = FALSE;
 }
 
 foreach ( $blah as $var ) {
-    if ($blah    ) {
+    if (  $blah    ) {
     }
 }
 
-if ($defaultPageDesign === 0
-    && $defaultCascade === true
+if (
+    $defaultPageDesign === 0
+    && $defaultCascade === TRUE
     && $defaultChildDesign === 0
 ) {
-    $settingsUpdated = false;
+    $settingsUpdated = FALSE;
 }
 
 // phpcs:set PSR2.ControlStructures.ControlStructureSpacing requiredSpacesAfterOpen 1
 // phpcs:set PSR2.ControlStructures.ControlStructureSpacing requiredSpacesBeforeClose 1
-foreach ($something as $blah => $that) {
-}
-foreach ( $something as $blah => $that ) {
-}
-foreach (  $something as $blah => $that  ) {
-}
+foreach ($something as $blah => $that) {}
+foreach ( $something as $blah => $that ) {}
+foreach (  $something as $blah => $that  ) {}
 // phpcs:set PSR2.ControlStructures.ControlStructureSpacing requiredSpacesAfterOpen 0
 // phpcs:set PSR2.ControlStructures.ControlStructureSpacing requiredSpacesBeforeClose 0
 
