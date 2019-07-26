@@ -1,5 +1,5 @@
 <?php
-namespace BrainGames\Progression; 
+namespace BrainGames\Progression;
 use function \cli\line;
 use function \cli\prompt;
 use function BrainGames\Engine\engine;
@@ -28,6 +28,7 @@ function progression($userName)
         return false;
     }
 }
-function launch() {
-	engine('BrainGames\Progression\progression', 'What number is missing in the progression?');
+function launch()
+{
+    engine('BrainGames\Progression\progression', 'What number is missing in the progression?');
 }

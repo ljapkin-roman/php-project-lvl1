@@ -12,15 +12,15 @@ function calculator($userName)
     $firstOperand = rand(1, 50);
     $secondOperand = rand(1, 50);
     switch ($symbolOperation) {
-    case 0:
-        $correctAnswer = $firstOperand + $secondOperand;
-	    break;
-    case 1:
-        $correctAnswer = $firstOperand - $secondOperand;
-	    break;
-    case 2:
-        $correctAnswer = $firstOperand * $secondOperand;
-	    break;
+        case 0:
+            $correctAnswer = $firstOperand + $secondOperand;
+            break;
+        case 1:
+            $correctAnswer = $firstOperand - $secondOperand;
+            break;
+        case 2:
+            $correctAnswer = $firstOperand * $secondOperand;
+            break;
     }
     line("Question: {$firstOperand} {$variantSign[$symbolOperation]} {$secondOperand}");
     $answerUser = intval(prompt("Your answer  "));
@@ -33,6 +33,7 @@ function calculator($userName)
         return false;
     }
 }
-function launch() {
-	engine('BrainGames\Calculator\calculator', 'What is the result of the expression?');
+function launch()
+{
+    engine('BrainGames\Calculator\calculator', 'What is the result of the expression?');
 }

@@ -6,11 +6,11 @@ use function BrainGames\Calculator\tutu;
 
 function engine($fn, $rule)
 {
-	line('Welcome to the Brain Engine Games!');
-	line($rule);
-	$userName = prompt('May i have your name');
-	line("Hello, %s!", $userName);
-	$counterAnswer = 0;
+    line('Welcome to the Brain Engine Games!');
+    line($rule);
+    $userName = prompt('May i have your name');
+    line("Hello, %s!", $userName);
+    $counterAnswer = 0;
     for ($i = 0; $i < 4; $i++) {
         if ($fn($userName)) {
             $counterAnswer++;
@@ -21,6 +21,5 @@ function engine($fn, $rule)
         } else {
                return false;
         }
-        
     }
 }

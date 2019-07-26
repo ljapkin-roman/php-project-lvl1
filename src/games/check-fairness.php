@@ -24,6 +24,7 @@ function yesOrNo($nameUser)
         return false;
     }
 }
-function launch() {
-	engine('BrainGames\Even\yesOrNo', 'Answer "yes" if number even otherwise answer "no".');
+function launch()
+{
+    engine('BrainGames\Even\yesOrNo', 'Answer "yes" if number even otherwise answer "no".');
 }

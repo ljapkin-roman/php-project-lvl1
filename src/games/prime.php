@@ -24,7 +24,8 @@ function prime($userName)
         line("Let's try again, {$userName}");
     }
 }
-function launch() {
-	engine('BrainGames\Prime\prime', 'Answer "yes" if given number is prime. Otherwise answer "no".
+function launch()
+{
+    engine('BrainGames\Prime\prime', 'Answer "yes" if given number is prime. Otherwise answer "no".
 ');
 }

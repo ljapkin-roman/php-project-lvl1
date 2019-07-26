@@ -34,6 +34,8 @@ function greatest_common_divider($userName)
         return false;
     }
 }
-function launch() {
-	engine('BrainGames\Greatest_Common_Divider\greatest_common_divider', 'Find the greatest common divisor of given number');
+function launch()
+{
+        $rule = 'Find the greatest common divisor of given number';
+    engine('BrainGames\Greatest_Common_Divider\greatest_common_divider', $rule);
 }
