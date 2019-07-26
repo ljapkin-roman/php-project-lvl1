@@ -3,7 +3,7 @@ namespace BrainGames\Greatest_Common_Divider;
 use function \cli\line;
 use function \cli\prompt;
 use function BrainGames\Engine\engine;
-function gcd($min, $max)
+function getGCD($min, $max)
 {
     if ($max % $min === 0) {
         return $min;
@@ -12,7 +12,7 @@ function gcd($min, $max)
     if ($max % $rest === 0 && $min % $rest === 0) {
         return $rest;
     } else {
-        return gcd($rest, $min);
+        return getGCD($rest, $min);
     }
 }
 function greatest_common_divider($userName)
@@ -22,7 +22,7 @@ function greatest_common_divider($userName)
     if ($minorityNumber > $largerNumber) {
         list($minorityNumber, $largerNumber) = array($largerNumber, $minorityNumber);
     }
-    $correctAnswer = gcd($minorityNumber, $largerNumber);
+    $correctAnswer = getGCD($minorityNumber, $largerNumber);
     line("Question : {$minorityNumber} {$largerNumber}");
     $userAnswer = intval(prompt("Your answer"));
     if ($correctAnswer === $userAnswer) {

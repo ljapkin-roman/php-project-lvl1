@@ -25,7 +25,6 @@
           "src/cli.php",
 	  "src/engine.php",
 	  "src/games/check-fairness.php",
-	  "src/games/executeThreeTime.php",
 	  "src/games/calculator.php",
 	  "src/games/greatest-common-divider.php",
 	  "src/games/prime.php",

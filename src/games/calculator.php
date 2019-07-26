@@ -7,20 +7,22 @@ use function BrainGames\Engine\engine;
 function calculator($userName)
 {
     $correctAnswer = 0;
-    $operationSign = ["+", "-", "*"];
-    $selectedSignForExpression = rand(0, 2);
+    $variantSign = ["+", "-", "*"];
+    $symbolOperation = rand(0, 2);
     $firstOperand = rand(1, 50);
     $secondOperand = rand(1, 50);
-    if ($selectedSignForExpression === 0) {
+    switch ($symbolOperation) {
+    case 0:
         $correctAnswer = $firstOperand + $secondOperand;
-    }
-    if ($selectedSignForExpression === 1) {
+	    break;
+    case 1:
         $correctAnswer = $firstOperand - $secondOperand;
-    }
-    if ($selectedSignForExpression === 2) {
+	    break;
+    case 2:
         $correctAnswer = $firstOperand * $secondOperand;
+	    break;
     }
-    line("Question: {$firstOperand} {$operationSign[$selectedSignForExpression]} {$secondOperand}");
+    line("Question: {$firstOperand} {$variantSign[$symbolOperation]} {$secondOperand}");
     $answerUser = intval(prompt("Your answer  "));
     if ($answerUser === $correctAnswer) {
         line("Correct!");
