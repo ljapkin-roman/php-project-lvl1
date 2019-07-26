@@ -2,7 +2,8 @@
 namespace BrainGames\Prime;
 use function \cli\line;
 use function \cli\prompt;
-function prime($nameUser)
+use function BrainGames\Engine\engine;
+function prime($userName)
 {
     $correctAnswer;
     $offerNumber = rand(2, 1000);
@@ -20,6 +21,10 @@ function prime($nameUser)
         return true;
     } else {
         line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'");
-        line("Let's try again {$nameUser}");
+        line("Let's try again, {$userName}");
     }
+}
+function launch() {
+	engine('BrainGames\Prime\prime', 'Answer "yes" if given number is prime. Otherwise answer "no".
+');
 }

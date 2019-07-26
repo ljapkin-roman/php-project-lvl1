@@ -33,5 +33,4 @@ function calculator($userName)
 }
 function launch() {
 	engine('BrainGames\Calculator\calculator', 'What is the result of the expression?');
-
 }

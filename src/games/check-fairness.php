@@ -1,8 +1,9 @@
 <?php
-  namespace BrainGames\CheckFairness;
+  namespace BrainGames\Even;
   use function \cli\line;
   use function \cli\prompt;
-function yesOrNo()
+  use function BrainGames\Engine\engine;
+function yesOrNo($nameUser)
 {
     $variantsAnswer = ["yes","no"];
         $random = rand();
@@ -15,11 +16,14 @@ function yesOrNo()
             return true;
         } else {
             line("\"{$answerUser}\" is wrong answer ;l(. Correct answer was \"{$correctResponse}\". 
-			Let's try again, {$name}!");
+			Let's try again, {$nameUser}!");
             return false;
         }
     } else {
         line("Answer can only no or yes!");
         return false;
     }
+}
+function launch() {
+	engine('BrainGames\Even\yesOrNo', 'Answer "yes" if number even otherwise answer "no".');
 }
