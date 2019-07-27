@@ -11,8 +11,8 @@ function engine($fn, $rule)
     $userName = prompt('May i have your name');
     line("Hello, %s!", $userName);
     $counterAnswer = 0;
-    while($counterAnswer <= 3) {
-        if(!$fn($userName)) {
+    while ($counterAnswer <= 3) {
+        if (!$fn($userName)) {
             return false;
         }
         $counterAnswer++;
@@ -21,13 +21,4 @@ function engine($fn, $rule)
             return true;
         }
     }
-    /*for ($i = 0; $i < 4; $i++) {
-        if ($fn($userName)) {
-            $counterAnswer++;
-            if ($counterAnswer === 3) {
-                line("Congratulations, {$userName}");
-                return true;
-            }
-        }     
-    }*/
 }
