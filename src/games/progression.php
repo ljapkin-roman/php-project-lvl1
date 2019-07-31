@@ -1,8 +1,8 @@
 <?php
-namespace BrainGames\Progression;
+namespace Src\Games\Progression;
 use function \cli\line;
 use function \cli\prompt;
-use function BrainGames\Engine\engine;
+use function Src\Engine\engine;
 function progression($userName)
 {
     $correctAnswer = 0;
@@ -30,5 +30,6 @@ function progression($userName)
 }
 function launch()
 {
-    engine('BrainGames\Progression\progression', 'What number is missing in the progression?');
+    $rules = 'What number is missing in the progression?';
+    engine('Src\Games\Progression\progression', $rules);
 }

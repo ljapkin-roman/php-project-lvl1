@@ -1,8 +1,8 @@
 <?php
-namespace BrainGames\Calculator;
+namespace Src\Games\Calculator;
 use function \cli\line;
 use function \cli\prompt;
-use function BrainGames\Engine\engine;
+use function Src\Engine\engine;
 
 function calculator($userName)
 {
@@ -35,5 +35,6 @@ function calculator($userName)
 }
 function launch()
 {
-    engine('BrainGames\Calculator\calculator', 'What is the result of the expression?');
+    $rules ='What is the result of the expression?';
+    engine('Src\Games\Calculator\calculator', $rules);
 }

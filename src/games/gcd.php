@@ -1,8 +1,8 @@
 <?php
-namespace BrainGames\Greatest_Common_Divider;
+namespace Src\Games\GCD;
 use function \cli\line;
 use function \cli\prompt;
-use function BrainGames\Engine\engine;
+use function Src\Engine\engine;
 function getGCD($min, $max)
 {
     if ($max % $min === 0) {
@@ -36,6 +36,6 @@ function greatest_common_divider($userName)
 }
 function launch()
 {
-        $rule = 'Find the greatest common divisor of given number';
-    engine('BrainGames\Greatest_Common_Divider\greatest_common_divider', $rule);
+        $rules = 'Find the greatest common divisor of given number';
+    engine('Src\Games\GCD\greatest_common_divider', $rules);
 }
