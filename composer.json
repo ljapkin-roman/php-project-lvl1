@@ -24,9 +24,9 @@
       "files": [
           "src/cli.php",
 	  "src/engine.php",
-	  "src/games/check-fairness.php",
+	  "src/games/even.php",
 	  "src/games/calculator.php",
-	  "src/games/greatest-common-divider.php",
+	  "src/games/gcd.php",
 	  "src/games/prime.php",
 	  "src/games/progression.php"
       ]
