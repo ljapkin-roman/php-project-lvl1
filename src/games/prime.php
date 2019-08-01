@@ -12,23 +12,16 @@ function isPrime($number)
 	    }
 	return true;
 }
-function prime($userName)
+function prime()
 {
-    $correctAnswer;
     $number = rand(2, 1000);
-    $correctAnswer = isPrime($number) ? "yes" : "no";
-    line("Question: {$number}");
-    $userAnswer = prompt("Your answer");
-    if ($userAnswer === $correctAnswer) {
-        line("Correct!");
-        return true;
-    } else {
-        line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'");
-        line("Let's try again, {$userName}");
-    }
+    $data['correctResponse'] = isPrime($number) ? "yes" : "no";
+    $data['rules'] = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+    $data['question'] = "is {$number} prime?";
+    return $data;
+    
 }
 function launch()
 {
-    $rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-    engine('Src\Games\Prime\prime', $rules);
+    engine('Src\Games\Prime\prime');
 }

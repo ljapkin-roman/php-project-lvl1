@@ -12,14 +12,15 @@ function isEven($number)
 }
 function yesOrNo()
 {
+    $enigmaNumber = rand();
     $variantsAnswer = ["yes","no"];
-    $rules = 'Answer "yes" if number even otherwise answer "no".';
-    $quest = "is {$enigmaNumber} even?";
-        $enigmaNumber = rand();
-        $correctResponse =  isEven($enigmaNumber) ? "yes" : "no";
+    $data['rules'] = 'Answer "yes" if number even otherwise answer "no".';
+    $data['question'] = "is {$enigmaNumber} even?";
+    $data['correctResponse'] =  isEven($enigmaNumber) ? "yes" : "no";
+    return $data;
 
 }
 function launch()
 {
-    engine('Src\Games\Even\yesOrNo', $rules);
+    engine('Src\Games\Even\yesOrNo');
 }
