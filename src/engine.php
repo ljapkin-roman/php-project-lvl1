@@ -12,16 +12,16 @@ function engine($game)
     line("Hello, %s!", $usersName);
     $roundCount = 0;
     for ($roundCount = 0; $roundCount < 3; $roundCount++) {
-	    $data = $game();
-	    list('correctResponse' => $correctResponse, 'rules' => $rules, 'question' => $question) = $data;
-	    line($question);
-	    $usersAnswer = prompt("Your answer");
-	    if ($usersAnswer !== $correctResponse) {
-		    line("'{$usersAnswer}' is wrong answer ;(. Correct answer was '{$correctResponse}'");
-		    line("Let's try again, {$usersName}");
-		    return false;
-	    }
-	    line("Correct!");
+        $data = $game();
+        list('correctResponse' => $correctResponse, 'rules' => $rules, 'question' => $question) = $data;
+        line($question);
+        $usersAnswer = prompt("Your answer");
+        if ($usersAnswer !== $correctResponse) {
+            line("'{$usersAnswer}' is wrong answer ;(. Correct answer was '{$correctResponse}'");
+            line("Let's try again, {$usersName}");
+            return false;
+        }
+        line("Correct!");
     }
     line("Congratulations, {$usersName}");
 }

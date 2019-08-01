@@ -21,7 +21,6 @@ function progression()
     $data['rules'] = 'What number is missing in the progression?';
     $data['question'] = "Question : " . $rowOfProgresValue;
     return $data;
-
 }
 function launch()
 {

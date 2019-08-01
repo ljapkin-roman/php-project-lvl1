@@ -5,10 +5,10 @@
   use function Src\Engine\engine;
 function isEven($number)
 {
-	if ($number % 2 === 0) {
-		return true;
-	}
-	return false;
+    if ($number % 2 === 0) {
+        return true;
+    }
+    return false;
 }
 function yesOrNo()
 {
@@ -18,7 +18,6 @@ function yesOrNo()
     $data['question'] = "is {$enigmaNumber} even?";
     $data['correctResponse'] =  isEven($enigmaNumber) ? "yes" : "no";
     return $data;
-
 }
 function launch()
 {

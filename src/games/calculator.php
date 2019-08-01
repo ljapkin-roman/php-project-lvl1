@@ -22,11 +22,10 @@ function calculator()
             $data['correctResponse'] = $firstOperand * $secondOperand;
             break;
     }
-    $data['rules'] ='What is the result of the expression?';
+    $data['rules'] = 'What is the result of the expression?';
     $data['question'] = "Question: {$firstOperand} {$signVariants[$symbolOperation]} {$secondOperand}";
     $data['correctResponse'] = strval($data['correctResponse']);
     return $data;
-
 }
 function launch()
 {

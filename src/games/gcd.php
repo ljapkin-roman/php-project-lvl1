@@ -26,7 +26,6 @@ function greatest_common_divider()
     $data['rules'] = 'Find the greatest common divisor of given number';
     $data['question'] = "Question : {$smallNumber} {$bigNumber}";
     return $data;
-
 }
 function launch()
 {
