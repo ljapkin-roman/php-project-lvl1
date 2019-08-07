@@ -1,8 +1,9 @@
 <?php
-  namespace Src\Games\Even;
-  use function \cli\line;
-  use function \cli\prompt;
-  use function Src\Engine\engine;
+namespace Src\Games\Even;
+use function \cli\line;
+use function \cli\prompt;
+use function Src\Engine\engine;
+
 function isEven($number)
 {
     if ($number % 2 === 0) {
@@ -10,16 +11,16 @@ function isEven($number)
     }
     return false;
 }
-function yesOrNo()
-{
+
+$evenness = function () {
     $enigmaNumber = rand();
     $variantsAnswer = ["yes","no"];
     $data['rules'] = 'Answer "yes" if number even otherwise answer "no".';
     $data['question'] = "is {$enigmaNumber} even?";
     $data['correctResponse'] =  isEven($enigmaNumber) ? "yes" : "no";
     return $data;
-}
-function launch()
+};
+function launch($fn)
 {
-    engine('Src\Games\Even\yesOrNo');
-}
+    engine($fn);
+
