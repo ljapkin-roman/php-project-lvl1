@@ -5,16 +5,22 @@ use function \cli\prompt;
 use function Engine\engine;
 
 const DESCRIPTION = 'What is the result of the expression?';
+const OPERATORS = ["+", "-", "*"];
 
 function launch()
 {
+<<<<<<< HEAD
       $calculator = function () {
         $operators = ["+", "-", "*"];
         $variantCount = count($operators) - 1;
         $symbolOperation = rand(0, $variantCount);
+=======
+      $play = function () {
+        $symbolOperation = rand(0, count(OPERATORS) - 1);
+>>>>>>> 380c930... fix fix fix
         $firstOperand = rand(1, 50);
         $secondOperand = rand(1, 50);
-        $operator = $operators[$symbolOperation];
+        $operator = OPERATORS[$symbolOperation];
         switch ($operator) {
             case "+":
                 $data['correctResponse'] = $firstOperand + $secondOperand;
