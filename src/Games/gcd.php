@@ -21,12 +21,12 @@ function getGcd($first, $second)
 
 function launch()
 {
-    $gcd = function () {
+    $uploadData = function () {
         $first = rand(1, 200);
         $second = rand(1, 200);
         $data['correctResponse'] = strval(getGcd($first, $second));
         $data['question'] = "Question : {$first} {$second}";
         return $data;
     };
-    engine(DESCRIPTION, $gcd);
+    engine(DESCRIPTION, $uploadData);
 }

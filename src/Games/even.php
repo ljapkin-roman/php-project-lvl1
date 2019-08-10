@@ -6,10 +6,7 @@ use function Src\Engine\engine;
 
 function isEven($number)
 {
-    if ($number % 2 === 0) {
-        return true;
-    }
-    return false;
+    return $number % 2;
 }
 
 $evenness = function () {
@@ -22,5 +19,11 @@ $evenness = function () {
 };
 function launch($fn)
 {
-    engine($fn);
-
+    $uploadData = function () {
+        $question = rand();
+        $data['question'] = $question;
+        $data['correctAnswer'] =  isEven($question) ? "no" : "yes";
+        return $data;
+    };
+    engine(DESCRIPTION, $uploadData);
+}

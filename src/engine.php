@@ -6,16 +6,16 @@ use function BrainGames\Calculator\tutu;
 
 const ROUND_GAME = 3;
 
-function engine($description, $game)
+function engine($description, $uploadData)
 {
-    line('Welcome to the Brain Engine Games!');
+    line('Welcome to the Brain Engine uploadDatas!');
     line($description);
     $usersName = prompt('May i have your name');
     line("Hello, %s!", $usersName);
-    for ($i = 0; $i < ROUND_GAME; $i++) {
-        $data = $game();
-        list('correctResponse' => $correctResponse, 'question' => $question) = $data;
-        line($question);
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
+        $data = $uploadData();
+        list('correctAnswer' => $correctAnswer, 'question' => $question) = $data;
+        line("Question : {$question}");
         $usersAnswer = prompt("Your answer");
         if ($usersAnswer !== $correctResponse) {
             line("'{$usersAnswer}' is wrong answer ;(. Correct answer was '{$correctResponse}'");

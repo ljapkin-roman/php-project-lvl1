@@ -17,17 +17,15 @@ function createProgression($start, $step, $lengthOfProgression)
 }
 function launch()
 {
-
-    $progression = function () {
-        $correctAnswer = 0;
+    $uploadData = function () {
         $increment = rand(1, 10);
         $start = rand(1, 100);
-        $maskElement = rand(0, LENGTH_OF_PROGRESSION - 1);
-        $progres = createProgression($start, $increment, LENGTH_OF_PROGRESSION);
-        $data['correctResponse'] = strval($progres[$maskElement]);
-        $progres[$maskElement] = "..";
-        $data['question'] = implode(" ", $progres);
+        $hiddenIndex = rand(0, LENGTH_OF_PROGRESSION - 1);
+        $progression = createProgression($start, $increment, LENGTH_OF_PROGRESSION);
+        $data['correctAnswer'] = strval($progression[$hiddenIndex]);
+        $progression[$hiddenIndex] = "..";
+        $data['question'] = implode(" ", $progression);
         return $data;
     };
-    engine(DESCRIPTION, $progression);
+    engine(DESCRIPTION, $uploadData);
 }

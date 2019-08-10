@@ -7,6 +7,9 @@ use function Engine\engine;
 const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 function isPrime($number)
 {
+    if ($number <= 1) {
+        return false;
+    }
     for ($i = 2; $i < round($number / 2); $i++) {
         if ($number % $i === 0) {
             return false;
@@ -18,11 +21,11 @@ function isPrime($number)
 
 function launch()
 {
-    $prime = function () {
-        $number = rand(2, 1000);
-        $data['correctResponse'] = isPrime($number) ? "yes" : "no";
-        $data['question'] = "is {$number} prime?";
+    $uploadData = function () {
+        $question = rand(2, 1000);
+        $data['correctAnswer'] = isPrime($question) ? "yes" : "no";
+        $data['question'] = $question;
         return $data;
     };
-    engine(DESCRIPTION, $prime);
+    engine(DESCRIPTION, $uploadData);
 }
