@@ -1,31 +1,29 @@
 <?php
-namespace Games\Progression;
-use function \cli\line;
-use function \cli\prompt;
-use function Engine\engine;
+namespace Ogurchik\Games\progression;
+use function Ogurchik\Engine\engine;
 
 const DESCRIPTION = 'What number is missing in the progression?';
-const LENGTH_OF_PROGRESSION = 11;
+const LENGTH = 10;
 
-function createProgression($start, $step, $lengthOfProgression)
+function createProgression($start, $step, $length)
 {
     $progression = [];
-    for ($i = 0; $i < $lengthOfProgression; $i++) {
+    for ($i = 0; $i < $length; $i++) {
         $progression[] = $start + $i * $step;
     }
     return $progression;
 }
 function launch()
 {
-    $uploadData = function () {
-        $increment = rand(1, 10);
+    $generateData = function () {
+        $diff = rand(1, 10);
         $start = rand(1, 100);
-        $hiddenIndex = rand(0, LENGTH_OF_PROGRESSION - 1);
-        $progression = createProgression($start, $increment, LENGTH_OF_PROGRESSION);
-        $data['correctAnswer'] = strval($progression[$hiddenIndex]);
-        $progression[$hiddenIndex] = "..";
+        $hiddenElementIndex = rand(0, LENGTH - 1);
+        $progression = createProgression($start, $diff, LENGTH);
+        $data['correctAnswer'] = (string)$progression[$hiddenElementIndex];
+        $progression[$hiddenElementIndex] = "..";
         $data['question'] = implode(" ", $progression);
         return $data;
     };
-    engine(DESCRIPTION, $uploadData);
+    engine(DESCRIPTION, $generateData);
 }

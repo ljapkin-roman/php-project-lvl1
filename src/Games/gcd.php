@@ -1,8 +1,6 @@
 <?php
-namespace Games\GCD;
-use function \cli\line;
-use function \cli\prompt;
-use function Engine\engine;
+namespace Ogurchik\Games\gcd;
+use function Ogurchik\Engine\engine;
 
 const DESCRIPTION = 'Find the greatest common divisor of given number';
 
@@ -21,12 +19,12 @@ function getGcd($first, $second)
 
 function launch()
 {
-    $uploadData = function () {
+    $generateData = function () {
         $first = rand(1, 200);
         $second = rand(1, 200);
-        $data['correctResponse'] = strval(getGcd($first, $second));
-        $data['question'] = "Question : {$first} {$second}";
+        $data['correctAnswer'] = (string)getGcd($first, $second);
+        $data['question'] = "$first $second";
         return $data;
     };
-    engine(DESCRIPTION, $uploadData);
+    engine(DESCRIPTION, $generateData);
 }

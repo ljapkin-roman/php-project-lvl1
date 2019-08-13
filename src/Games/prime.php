@@ -1,8 +1,6 @@
 <?php
-namespace Games\Prime;
-use function \cli\line;
-use function \cli\prompt;
-use function Engine\engine;
+namespace Ogurchik\Games\prime;
+use function Ogurchik\Engine\engine;
 
 const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 function isPrime($number)
@@ -21,11 +19,11 @@ function isPrime($number)
 
 function launch()
 {
-    $uploadData = function () {
+    $generateData = function () {
         $question = rand(2, 1000);
         $data['correctAnswer'] = isPrime($question) ? "yes" : "no";
         $data['question'] = $question;
         return $data;
     };
-    engine(DESCRIPTION, $uploadData);
+    engine(DESCRIPTION, $generateData);
 }

@@ -1,8 +1,9 @@
 <?php
-namespace Src\Games\Even;
-use function \cli\line;
-use function \cli\prompt;
-use function Src\Engine\engine;
+namespace Ogurchik\Games\even;
+
+use function Ogurchik\Engine\engine;
+
+const DESCRIPTION  = 'Answer "yes" if number even otherwise answer "no".';
 
 function isEven($number)
 {
@@ -19,11 +20,11 @@ $evenness = function () {
 };
 function launch($fn)
 {
-    $uploadData = function () {
+    $generateData = function () {
         $question = rand();
         $data['question'] = $question;
         $data['correctAnswer'] =  isEven($question) ? "no" : "yes";
         return $data;
     };
-    engine(DESCRIPTION, $uploadData);
+    engine(DESCRIPTION, $generateData);
 }

@@ -1,34 +1,30 @@
 <?php
-namespace Games\Calculator;
-use function \cli\line;
-use function \cli\prompt;
-use function Engine\engine;
+namespace Ogurchik\Games\calculator;
+use function Ogurchik\Engine\engine;
 
 const DESCRIPTION = 'What is the result of the expression?';
 const OPERATORS = ["+", "-", "*"];
 
 function launch()
 {
-      $play = function () {
-        $symbolOperation = rand(0, count(OPERATORS) - 1);
-      $uploadData = function () {
+      $generateData = function () {
         $firstOperand = rand(1, 50);
         $secondOperand = rand(1, 50);
         $operator = OPERATORS[rand(0, count(OPERATORS) - 1)];
         switch ($operator) {
             case "+":
-               $correctAnswer = (string)($firstOperand + $secondOperand);
+                $correctAnswer = $firstOperand + $secondOperand;
                 break;
             case "-":
-                $correctAnswer = (string)($firstOperand - $secondOperand);
+                $correctAnswer = $firstOperand - $secondOperand;
                 break;
             case "*":
-                $correctAnswer = (string)($firstOperand * $secondOperand);
+                $correctAnswer = $firstOperand * $secondOperand;
                 break;
         }
           $data['question'] = "$firstOperand $operator $secondOperand";
-          $data['correctAnswer'] = $correctAnswer;
+          $data['correctAnswer'] = (string)$correctAnswer;
           return $data;
       };
-    engine(DESCRIPTION, $uploadData);
+    engine(DESCRIPTION, $generateData);
 }
