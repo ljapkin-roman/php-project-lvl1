@@ -19,10 +19,10 @@ function isPrime($number)
 function launch()
 {
     $generateData = function () {
-    $question = rand(2, 1000);
-    $data['correctAnswer'] = isPrime($question) ? "yes" : "no";
-    $data['question'] = $question;
-    return $data;
+        $question = rand(2, 1000);
+        $data['correctAnswer'] = isPrime($question) ? "yes" : "no";
+        $data['question'] = $question;
+        return $data;
     };
     engine(DESCRIPTION, $generateData);
 }
