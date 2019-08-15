@@ -7,24 +7,24 @@ const OPERATORS = ["+", "-", "*"];
 
 function launch()
 {
-      $generateData = function () {
-        $firstOperand = rand(1, 50);
-        $secondOperand = rand(1, 50);
-        $operator = OPERATORS[rand(0, count(OPERATORS) - 1)];
-        switch ($operator) {
-            case "+":
+        $generateData = function () {
+            $firstOperand = rand(1, 50);
+            $secondOperand = rand(1, 50);
+            $operator = OPERATORS[rand(0, count(OPERATORS) - 1)];
+            switch ($operator) {
+                case "+":
                 $correctAnswer = $firstOperand + $secondOperand;
                 break;
-            case "-":
+                case "-":
                 $correctAnswer = $firstOperand - $secondOperand;
                 break;
-            case "*":
+                case "*":
                 $correctAnswer = $firstOperand * $secondOperand;
                 break;
-        }
-          $data['question'] = "$firstOperand $operator $secondOperand";
-          $data['correctAnswer'] = (string)$correctAnswer;
-          return $data;
-      };
-    engine(DESCRIPTION, $generateData);
+            }
+            $data['question'] = "$firstOperand $operator $secondOperand";
+            $data['correctAnswer'] = (string)$correctAnswer;
+            return $data;
+        };
+        engine(DESCRIPTION, $generateData);
 }

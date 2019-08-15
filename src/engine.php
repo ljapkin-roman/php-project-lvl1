@@ -1,20 +1,20 @@
 <?php
-namespace Engine;
+namespace Ogurchik\Engine;
+
 use function \cli\line;
 use function \cli\prompt;
 use function BrainGames\Calculator\tutu;
 
 const ROUND_GAME = 3;
 
-function engine($description, $uploadData)
+function engine($description, $generateData)
 {
-    line('Welcome to the Brain Engine uploadDatas!');
+    line('Welcome to the Brain Games!');
     line($description);
     $usersName = prompt('May i have your name');
     line("Hello, %s!", $usersName);
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-        $data = $uploadData();
-        list('correctAnswer' => $correctAnswer, 'question' => $question) = $data;
+        list('correctAnswer' => $correctAnswer, 'question' => $question) = $generateData();
         line("Question : {$question}");
         $usersAnswer = prompt("Your answer");
         if ($usersAnswer !== $correctResponse) {
