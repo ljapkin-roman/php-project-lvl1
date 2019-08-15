@@ -27,11 +27,11 @@
     "autoload": {
         "files": [
             "src/engine.php",
-	        "src/Games/even.php",
+            "src/Games/even.php",
             "src/Games/calculator.php",
-	        "src/Games/gcd.php",
-	        "src/Games/prime.php",
-	        "src/Games/progression.php"
+            "src/Games/gcd.php",
+            "src/Games/prime.php",
+            "src/Games/progression.php"
         ]
     },
     "require-dev": {
