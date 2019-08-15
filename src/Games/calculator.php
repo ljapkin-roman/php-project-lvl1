@@ -13,14 +13,14 @@ function launch()
             $operator = OPERATORS[rand(0, count(OPERATORS) - 1)];
             switch ($operator) {
                 case "+":
-                $correctAnswer = $firstOperand + $secondOperand;
-                break;
+                    $correctAnswer = $firstOperand + $secondOperand;
+                    break;
                 case "-":
-                $correctAnswer = $firstOperand - $secondOperand;
-                break;
+                    $correctAnswer = $firstOperand - $secondOperand;
+                    break;
                 case "*":
-                $correctAnswer = $firstOperand * $secondOperand;
-                break;
+                    $correctAnswer = $firstOperand * $secondOperand;
+                    break;
             }
             $data['question'] = "$firstOperand $operator $secondOperand";
             $data['correctAnswer'] = (string)$correctAnswer;
