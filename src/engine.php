@@ -3,9 +3,8 @@ namespace Ogurchik\Engine;
 
 use function \cli\line;
 use function \cli\prompt;
-use function BrainGames\Calculator\tutu;
 
-const ROUND_GAME = 3;
+const ROUNDS_COUNT = 3;
 
 function engine($description, $generateData)
 {
@@ -17,8 +16,8 @@ function engine($description, $generateData)
         list('correctAnswer' => $correctAnswer, 'question' => $question) = $generateData();
         line("Question : {$question}");
         $usersAnswer = prompt("Your answer");
-        if ($usersAnswer !== $correctResponse) {
-            line("'{$usersAnswer}' is wrong answer ;(. Correct answer was '{$correctResponse}'");
+        if ($usersAnswer !== $correctAnswer) {
+            line("'{$usersAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'");
             line("Let's try again, {$usersName}");
             return;
         }

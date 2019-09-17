@@ -13,6 +13,7 @@ function createProgression($start, $step, $length)
     }
     return $progression;
 }
+
 function launch()
 {
     $generateData = function () {
